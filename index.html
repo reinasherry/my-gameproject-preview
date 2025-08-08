@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Selector with Game</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <h1>Choose Your Character</h1>
+  <p class="subtitle">Click on any character to view details. Press ESC or click outside to close.</p>
+
+  <div class="images-wrapper">
+    <div class="image-container">
+      <div class="character-card" data-character="penguin">
+        <img src="images/pinguin-1.png.gif" alt="Penguin">
+        <div class="character-name">Arctic Avenger</div>
+      </div>
+
+      <div class="character-card" data-character="duck">
+        <img src="images/Duck Pixel art.gif" alt="Duck">
+        <div class="character-name">Quack Commander</div>
+      </div>
+
+      <div class="character-card" data-character="cat">
+        <img src="images/cat pixel art.gif" alt="Cat">
+        <div class="character-name">Shadow Prowler</div>
+      </div>
+
+      <div class="character-card" data-character="dog">
+        <img src="images/New Piskeldog.gif" alt="Dog">
+        <div class="character-name">Bolt</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="music-controls">
+    <button id="musicToggle" class="music-btn" title="Toggle Music">
+      <span class="music-icon">🎵</span>
+    </button>
+    <span class="music-status">Music: ON</span>
+  </div>
+
+  <div class="start-game-wrapper">
+    <button class="StartGame">Start Game</button>
+  </div>
+
+  <div class="character-description" id="characterDescription">
+    <div class="desc-close-btn" id="descCloseBtn">✕</div>
+    <div class="desc-image-container">
+      <img id="descCharacterImage" src="" alt="Character image">
+    </div>
+    <div class="desc-content">
+      <h3 id="descTitle">Character Name</h3>
+      <p id="descText">Select a character to see their description.</p>
+      <div class="stats" id="statsContainer"></div>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <audio id="jumpSound" src="sounds/Untitled video - Made with Clipchamp.m4a" preload="auto"></audio>
+  <audio id="exit" src="sounds/Untitled video - Made with Clipchamp (1).m4a" preload="auto"></audio>
+  <audio id="clickpop" src="sounds/casual-click-pop-ui-3-262120.mp3" preload="auto"></audio>
+  <audio id="bgMusic" loop>
+    <source src="sounds/game-music-loop-7-145285 (1).mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="cursor-light" id="cursorLight"></div>
+  <div class="overlay" id="overlay"></div>
+
+  <h2>The Character you chose:</h2>
+  <div id="party"></div>
+
+  <footer>
+    Made with ❤️ | Character Selector
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
